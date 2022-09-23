@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="bum1" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="bum2" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="bum3" style="width: 100px;margin: 1px;">&nbsp;</div>
+<br>
+
+<button id="b1">Click to change color</button>
+
+<script>
+
+    const hej = document.querySelectorAll("div")
+
+    for (let i = 0; i < 3; i++) {
+        hej[i].style.backgroundColor = "pink"
+
+        document.getElementById("b1").onclick = () => {
+            hej[0].style.backgroundColor = "blue"
+            hej[1].style.backgroundColor = "purple"
+            hej[2].style.backgroundColor = "black"
+        }
+
+    }
+
+</script>
+
+
+</body>
+</html>

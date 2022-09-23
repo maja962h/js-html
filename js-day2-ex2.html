@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .my-div {width: 25px; height: 25px;background-color: #0022ff; margin:1px;}
+    </style>
+
+</head>
+<body>
+
+<div id="detHele">
+<div id="bob" class="my-div">&nbsp</div>
+<div id="bib" class="my-div">&nbsp</div>
+<div id="bab" class="my-div">&nbsp</div>
+<div id="bub" class="my-div">&nbsp</div>
+<div id="beb" class="my-div">&nbsp</div>
+<div id="bæb" class="my-div">&nbsp</div>
+<div id="bøb" class="my-div">&nbsp</div>
+<div id="båb" class="my-div">&nbsp</div>
+</div>
+
+<p id="p-tag"></p>
+
+<script>
+
+document.getElementById("detHele").onclick = (evt) => {
+    const divId = evt.target.id
+    const text = "Hi from this div: " + divId
+    document.getElementById("p-tag").innerText = text
+}
+
+</script>
+
+</body>
+</html>
