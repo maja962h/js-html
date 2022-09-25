@@ -9,7 +9,57 @@
 </head>
 <body>
 
+    <div class="container" style="padding:1em;font-family: sans-serif">
 
+        <button id="load-btn">Load Data</button>
+        <ul id="ul1"></ul>
+    
+        <form>
+            <div><input id="name-input" placeholder="Enter new name here"></div>
+            <div><span style="display: inline-block; width: 20em;margin-top: 10px;">Manipulate the individual DOM elements </span>
+                <button id="b1">Add Name</button>
+                <button id="b2">Remove First</button>
+                <button id="b3">Remove Last</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+        const names = ["Lars", "Peter", "Jan", "Lise", "Janne"]
+
+        function ListToHTML() {
+            const lis = names.map(n => `<li>${n}</li>`).join("")
+            document.getElementById("ul1").innerHTML = lis
+        }
+
+        document.getElementById("load-btn").onclick = ()=> ListToHTML()
+    
+        document.getElementById("b1").onclick = (evt) => {
+            evt.preventDefault()
+            const input = document.getElementById("name-input").value
+            const listViewElement = document.createElement("li");
+            listViewElement.appendChild(document.createTextNode(input))
+            const ul = document.getElementById("ul1").appendChild(listViewElement)
+            names.push(input)
+            console.log(names)
+        }
+    
+        document.getElementById("b2").onclick = (evt) => {
+            evt.preventDefault()
+            document.getElementById("ul1").firstChild.remove();
+            names.shift()
+            console.log(names)
+        }
+    
+        document.getElementById("b3").onclick = (evt) => {
+            evt.preventDefault()
+            document.getElementById("ul1").lastChild.remove();
+            names.pop()
+            console.log(names)
+        }
+    </script>
+    
 
 </body>
 </html>

@@ -20,7 +20,7 @@
     <tbody id="tbody"></tbody>
 </table>
 
-<div><label for="filter-price">Price</label><input id="filter-price">
+<div><input id="filter-price">
     <button id="btn-filter-price">Price less than</button>
     <button id="btn-clear-filter">Clear Filter</button>
 </div>
@@ -47,6 +47,18 @@
 
     const rowsAsString = tableRows.join("")
     document.getElementById("tbody").innerHTML = rowsAsString
+    makeTableRows(cars)
+
+    document.getElementById("btn-filter-price").onclick = () => {
+        const price = document.getElementById("filter-price").value
+        const filteredCars = cars.filter(car => car.price < price)
+        makeTableRows(filteredCars)
+    }
+
+    document.getElementById("btn-clear-filter").onclick = function(){
+        makeTableRows(cars)
+    }
+
 </script>
 
 </body>
